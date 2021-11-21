@@ -30,7 +30,7 @@ public class Application {
         storage.addOperation(first,sign,second,result);
     }
 
-    private void authorization() { //////////////////////////////
+    private void authorization() {
         writer.write("Username: ");
         String username = reader.getLine();
         writer.write("Password: ");
