@@ -1,19 +1,19 @@
-package org.example;
+package org.example.service;
 
 public class CalcService {
-    public static double mul(double first, double second){
+    private static double mul(double first, double second){
         return first*second;
     }
 
-    public static double div(double first, double second){
+    private static double div(double first, double second){
         return first/second;
     }
 
-    public static double sub(double first, double second){
+    private static double sub(double first, double second){
         return first-second;
     }
 
-    public static double sum(double first, double second){
+    private static double sum(double first, double second){
         return  first+second;
     }
 
