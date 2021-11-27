@@ -8,6 +8,7 @@ public class User {
     private String name;
     private String username;
     private String password;
+    private String role;
 
     public User() {
     }
@@ -23,6 +24,14 @@ public class User {
         this.name = name;
         this.username = username;
         this.password = password;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
     }
 
     public long getId() {

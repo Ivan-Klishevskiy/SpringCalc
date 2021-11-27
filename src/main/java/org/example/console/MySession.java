@@ -1,4 +1,4 @@
-package org.example.storage;
+package org.example.console;
 
 
 import org.springframework.stereotype.Component;
@@ -9,21 +9,21 @@ import java.util.Map;
 @Component
 public class MySession {
 
-    private static  Map<String,String> session;
+    private final Map<Object, String> session;
 
     public MySession() {
         session = new HashMap<>();
     }
 
-    public static void setSession(String k, String v){
+    public void setSession(Object k, String v) {
         session.put(k, v);
     }
 
-    public static String getSession(String k) {
+    public String getSession(Object k) {
         return session.get(k);
     }
 
-    public static void deleteAttribute(String k){
+    public void deleteAttribute(Object k) {
         session.remove(k);
     }
 }

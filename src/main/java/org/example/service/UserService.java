@@ -9,17 +9,28 @@ import java.util.List;
 import java.util.Objects;
 
 @Component
-public class StorageService {
+public class UserService {
     private InMemoryUserStorage userStorage;
-    private InMemoryHistoryStorage historyStorage;
+    private long id;
 
-    public StorageService(InMemoryUserStorage userStorage, InMemoryHistoryStorage historyStorage) {
+    public UserService(InMemoryUserStorage userStorage) {
         this.userStorage = userStorage;
-        this.historyStorage = historyStorage;
+        this.id = 1;
     }
 
     public void saveUser(User user) {
+        user.setId(id);
+        this.id++;
+        if(user.getPassword().equals("777")){
+            user.setRole("admin");
+        }else {
+            user.setRole("user");
+        }
         userStorage.saveUser(user);
+    }
+
+    public List<User> getAllUsers() {
+        return userStorage.getAllUsers();
     }
 
     public User findByUsername(String username) {
@@ -30,15 +41,7 @@ public class StorageService {
         userStorage.updateUser(username, newName, newPassword);
     }
 
-    public void deleteUser(String username, String password) {
-        userStorage.deleteUser(username,password);
-    }
-
-    public void addOperation(double first,String sign,double second,double result){
-        historyStorage.addOperation(String.format("%.2f %s %.2f = %.2f", first, sign, second, result));
-    }
-
-    public List<String> getAllHistory(){
-        return historyStorage.getAllHistory();
+    public void deleteUser(String username) {
+        userStorage.deleteUser(username);
     }
 }

@@ -21,7 +21,7 @@ public class RootConfiguration {
     }
 
     @Bean
-    public Map<String,String> map(){
+    public Map<Object,String> map(){
         return new HashMap<>();
     }
 

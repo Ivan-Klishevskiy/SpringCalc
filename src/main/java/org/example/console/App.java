@@ -1,8 +1,7 @@
-package org.example;
+package org.example.console;
 
 
 import org.example.configuration.RootConfiguration;
-import org.example.util.Application;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 

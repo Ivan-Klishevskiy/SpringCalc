@@ -1,4 +1,4 @@
-package org.example.util;
+package org.example.console;
 
 import org.springframework.stereotype.Component;
 
